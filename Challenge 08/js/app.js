@@ -39,11 +39,12 @@ function clearInput() {
 function addTodo(todoName) {
   //1. push value to array
   todoItems.push({name: todoName, id : id, done: false});
-  //2. save json
+  //2. increase id
+  id++;
+  //3. save json
   //TODO.
   saveJson();
-
-  //3. update html
+  //4. update html
 	updateList();
 }
 
@@ -61,4 +62,8 @@ function updateList() {
   
   LIST_HTML.innerHTML =  code;
   }
+}
+
+function saveJson(){
+  localStorage.setItem("TODO", JSON.stringify(todoItems));
 }

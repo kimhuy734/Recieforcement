@@ -38,16 +38,20 @@ function clearInput() {
 
 function addTodo(todoName) {
 	todoItems.push({name: todoName, id : id, done: false});
-  // TODO: call updateList function
-  updateList();
+	updateList();
 }
 
 function updateList() {
   let code = "";
-  // TODO: loop get value from array 
-  for(let item of todoItems){
-  // console it.
-  console.log(item);
+  for(let item of todoItems) {
+	// TODO
+    code += `<li class="item">
+        <i class="fa fa-circle-thin co" job="complete" id=""></i>
+        <p class="text">${item.name}</p>
+        <i class="fa fa-trash-o de" job="delete" id=""></i>
+    </li>`;
+  // TODO: display to html
+  
+  LIST_HTML.innerHTML =  code;
   }
- 
 }
